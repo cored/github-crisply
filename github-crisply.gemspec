@@ -15,5 +15,10 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Github::Crisply::VERSION
 
+  gem.add_dependency 'faraday'
+  gem.add_dependency 'faraday_middleware'
+  gem.add_dependency 'multi_xml'
+  gem.add_dependency 'hashie'
+
   gem.add_development_dependency 'rspec'
 end
