@@ -19,6 +19,9 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'faraday_middleware'
   gem.add_dependency 'multi_xml'
   gem.add_dependency 'hashie'
+  gem.add_dependency 'nokogiri'
+  gem.add_dependency 'sinatra'
 
   gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'heroku'
 end
