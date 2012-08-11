@@ -1,8 +1,8 @@
 require 'rubygems'
-require 'sinatra'
+require 'sinatra/base'
 
-class Server
-  post '/' do 
-    params[:payload]
-  end
+class Server < Sinatra::Base
+   post '/' do 
+     params[:payload]
+   end
 end

@@ -3,7 +3,7 @@ require 'rubygems'
 require 'faraday'
 require 'faraday_middleware'
 require 'nokogiri'
-require 'sinatra'
+require 'sinatra/base'
 
 module Github
   module Crisply
@@ -39,5 +39,6 @@ module Github
         end.to_xml
       end
     end
+
   end
 end
