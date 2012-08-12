@@ -5,6 +5,7 @@ PATH
       faraday
       faraday_middleware
       hashie
+      json
       multi_xml
       nokogiri
       sinatra
@@ -28,6 +29,7 @@ GEM
       rubyzip
     heroku-api (0.3.2)
       excon (~> 0.15.5)
+    json (1.7.4)
     launchy (2.1.2)
       addressable (~> 2.3)
     mime-types (1.19)

@@ -21,6 +21,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'hashie'
   gem.add_dependency 'nokogiri'
   gem.add_dependency 'sinatra'
+  gem.add_dependency 'json'
 
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'heroku'

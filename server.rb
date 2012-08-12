@@ -1,9 +1,10 @@
 require 'rubygems'
+require 'json'
 require 'sinatra/base'
 
 class Server < Sinatra::Base
    post '/' do 
-     @payload = params[:payload]
-     "It worked"
+     push = JSON.parse(params[:payload])
+     "I got some JSON: #{push.inspect}" 
    end
 end
