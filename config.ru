@@ -1,3 +1,3 @@
-require File.expand_path(File.dirname(__FILE__) + '/server')
+require File.expand_path(File.dirname(__FILE__) + '/lib/server')
 
-run Server.new
+run Github::Crisply::Server.new

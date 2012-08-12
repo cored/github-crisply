@@ -24,21 +24,32 @@ module Github
       end
 
       def create_activity(data)
+        data.merge!(:guid => guid)
+        puts "Request: #{xml_builder(data)}"
         @connection.post('activity-items.xml', xml_builder(data))
       end
 
       protected
+      def guid
+        "post-activity-#{Time.now.to_f}-#{Kernel.rand(2**64)}"
+      end
+
       def xml_builder(data)
-         Nokogiri::XML::Builder.new do |xml|
-          xml.send('activity-item', 'xmlns' => 'http://crisply.com/api/v1') do
+        Nokogiri::XML::Builder.new do |xml|
+          xml.send('activity-item', 
+                   'xmlns' => 'http://crisply.com/api/v1') do
             [:guid, :text].each do |attribute|
-              value = data[attribute.to_sym]
-              xml.send(attribute, value)
+              value = data[attribute]
+              xml.send(format_xml_node(attribute), value) unless value.nil?
             end
           end
         end.to_xml
       end
-    end
 
+      def format_xml_node(name)
+        "#{name.to_s.gsub('_','-')}_".to_sym
+      end
+
+    end
   end
 end
