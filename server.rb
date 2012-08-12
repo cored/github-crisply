@@ -9,6 +9,6 @@ class Server < Sinatra::Base
 
    post '/' do 
      push = JSON.parse(params[:payload])
-     "I got some JSON: #{push.inspect}" 
+     logger.info "I got some JSON: #{push.inspect}" 
    end
 end
