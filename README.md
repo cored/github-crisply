@@ -1,24 +1,16 @@
 # Github::Crisply
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'github-crisply'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install github-crisply
+Webhook for posting information from a Github repository to
+Crisply[http://crisply.com]
 
 ## Usage
 
-TODO: Write usage instructions here
+* Clone the repo
+* Modify the config.yml file
+* Push to heroku or another server
+* Put the URL on admin section of your repo at Github pointing to your
+  deployed server.
+* Profit
 
 ## Contributing
 
