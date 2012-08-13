@@ -4,8 +4,8 @@ require File.expand_path('../lib/github/crisply/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Rafael George"]
   gem.email         = ["george.rafael@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Webhook for integrating Github and Crisply}
+  gem.summary       = %q{Webhook for integrating Github and Crisply}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
