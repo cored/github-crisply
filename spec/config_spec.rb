@@ -16,7 +16,7 @@ describe Github::Crisply::ConfigHandler do
     end
 
     describe :project_id do 
-      its(:project_id) { should == 1 }
+      its(:project_id) { should == 26005 }
     end
   end
 

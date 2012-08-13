@@ -8,7 +8,7 @@ module Github
     class Client
       REQUEST_XML_NODES = [:guid, :text]
 
-      def initialize(credentials, debug = false)
+      def initialize(credentials, debug = false, factory = Factory)
         @connection = Faraday.new :url => "https://#{credentials[:account]}.crisply.com/api/" do |faraday|
           faraday.adapter Faraday.default_adapter
           faraday.basic_auth credentials[:token], ' '
@@ -16,6 +16,7 @@ module Github
           faraday.response :xml,          :content_type => /\bxml$/
           faraday.response :mashify,      :content_type => /\bxml$/
         end
+        @factory = factory
       end
 
       def connected?
