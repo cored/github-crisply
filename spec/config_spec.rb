@@ -11,8 +11,8 @@ describe Github::Crisply::ConfigHandler do
       its(:account) { should == "testou" }
     end
 
-    describe :username do 
-      its(:username) { should == "W0TLPnbZJgiGPegO4gr5" }
+    describe :token do 
+      its(:token) { should == "W0TLPnbZJgiGPegO4gr5" }
     end
 
     describe :project_id do 
