@@ -1,6 +1,9 @@
+require 'rubygems'
 require 'rspec'
 require 'fakeweb'
 require 'rack/test'
+
+ENV['RACK_ENV'] = 'test'
 
 RSpec.configure do |config|
   config.color_enabled = true
