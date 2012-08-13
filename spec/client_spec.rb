@@ -8,9 +8,9 @@ describe Github::Crisply::Client do
     its(:connected?) { should be_true}
 
     describe :create_activity do 
-      let(:data) { {:text => "Testing Data Publishing"} }
+      let(:data) { {:project_id => 26005, :text => "Testing Data Publishing"} }
       subject { client.create_activity data }
-      it { should == ''}
+      its(:status) { should == 201 }
     end
   end
 end
