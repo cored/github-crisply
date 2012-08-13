@@ -3,7 +3,6 @@ require 'rubygems'
 require 'faraday'
 require 'faraday_middleware'
 require 'nokogiri'
-require 'sinatra/base'
 
 module Github
   module Crisply
@@ -41,18 +40,22 @@ module Github
         Nokogiri::XML::Builder.new do |xml|
           xml.send('activity-item', 
                    'xmlns' => 'http://crisply.com/api/v1') do
-            REQUEST_XML_NODES.each do |attribute|
-              value = data[attribute]
-              xml.send(format_xml_node(attribute), value) unless value.nil?
-            end
+            add_values_to_xml_nodes(data, xml)
           end
         end.to_xml
+      end
+
+      def add_values_to_xml_nodes(data, xml)
+        REQUEST_XML_NODES.each do |attribute|
+          value = data[attribute]
+          xml.send(format_xml_node(attribute), value) unless value.nil?
+        end
+        xml
       end
 
       def format_xml_node(name)
         "#{name.to_s.gsub('_','-')}_".to_sym
       end
-
     end
   end
 end

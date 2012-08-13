@@ -41,6 +41,8 @@ GEM
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
+    rack-test (0.6.1)
+      rack (>= 1.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.11.0)
@@ -65,4 +67,5 @@ DEPENDENCIES
   fakeweb
   github-crisply!
   heroku
+  rack-test
   rspec
