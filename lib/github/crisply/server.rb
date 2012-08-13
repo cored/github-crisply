@@ -7,6 +7,7 @@ module Github
     class Server < Sinatra::Base
       post '/' do 
         push = JSON.parse(params[:payload])
+        puts "#{push.inspect}"
         process_payload(push)
       end
 
