@@ -14,6 +14,10 @@ describe Github::Crisply::ConfigHandler do
     describe :username do 
       its(:username) { should == "W0TLPnbZJgiGPegO4gr5" }
     end
+
+    describe :project_id do 
+      its(:project_id) { should == 1 }
+    end
   end
 
 end
