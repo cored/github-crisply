@@ -5,8 +5,8 @@ module Github
         ConfigHandler.new
       end
 
-      def crisply_client(account, username) 
-        Client.new(:account => account, :username => username)
+      def crisply_client(account, token) 
+        Client.new(:account => account, :token => token)
       end
     end
   end

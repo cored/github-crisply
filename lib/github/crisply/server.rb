@@ -6,8 +6,7 @@ module Github
 
     class Server < Sinatra::Base
       post '/' do 
-        push = params[:payload]
-        PayloadProcessor.new(push).process
+        PayloadProcessor.new(params[:payload]).process
       end
     end
   end

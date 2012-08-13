@@ -6,9 +6,9 @@ module Github
       def initialize
         @config = YAML.load_file(
           File.expand_path(File.dirname(__FILE__))+'/../../../config.yml')
-        @account = self.config["credentials"]["account"]
-        @token = self.config["credentials"]["token"]
-        @project_id = self.config["credentials"]["project-id"]
+        @account = @config["credentials"]["account"]
+        @token = @config["credentials"]["token"]
+        @project_id = @config["credentials"]["project-id"]
       end
 
     end
