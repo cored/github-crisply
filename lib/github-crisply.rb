@@ -21,13 +21,11 @@ module Github
       end
 
       def connected?
-        true
-        #@connection.get('test.xml').status == 200
+        @connection.get('test.xml').status == 200
       end
 
       def create_activity(data)
         data.merge!(:guid => guid)
-        puts "Request: #{xml_builder(data)}"
         @connection.post('activity_items.xml') do |req|
           req.headers['Content-Type'] = 'application/xml'
           req.body = xml_builder(data)
